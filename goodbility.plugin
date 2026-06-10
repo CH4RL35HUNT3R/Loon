@@ -7,5 +7,5 @@
 hostname = isi.csan.*, notability.com
 
 [Script]
-http-response ^https?://notability\.com/global script-path=https://github.com/CH4RL35HUNT3R/Loon/goodbility.js, requires-body=true, tag=Goodbility-Notability
+http-response ^https?://notability\.com/global script-path=https://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@raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/goodbility.js, requires-body=true, tag=Goodbility-Notability
 http-response ^https://isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$) script-path=goodbility_loon_response.js, requires-body=true, tag=Goodbility-GoodNotes
