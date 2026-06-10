@@ -1,13 +1,12 @@
 #!name=Goodbility解锁-响应改写
-#!desc=GoodNotes & Notability 会员解锁（还原自 ddgksf2013）
-#!author=ddgksf2013 (贾维斯还原)
+#!desc=GoodNotes & Notability 会员解锁
+#!author=ddgksf2013
 #!match=^https?://notability\.com/global
 #!match=^https://isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$)
 #!type=http-response
 #!argument=requires-body=true
 
-// Goodbility 解锁 - Loon 响应脚本（完全还原版）
-// 基于原脚本 goodbility.vip.js 在 Node.js 模拟环境中真实执行结果
+
 // 适用于 GoodNotes & Notability
 // MITM hostname: isi.csan.*, notability.com
 
