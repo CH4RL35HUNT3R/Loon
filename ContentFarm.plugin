@@ -1,0 +1,10 @@
+#!name=ContentFarm屏蔽
+#!desc=屏蔽 Google 搜索内容农场（还原自 limbopro）
+#!author=limbopro
+#!openUrl=https://t.me/Adblock4limbo
+
+[Mitm]
+hostname = www.google.com, google.com.hk, google.com
+
+[Script]
+http-response ^https?://(www\.)?google\.[a-z.]*/search\?(?!.*?apps=) script-path=contentFarm_loon.js, requires-body=true, tag=ContentFarm
