@@ -7,6 +7,6 @@
 hostname = isi.csan.*, notability.com
 
 [Script]
-http-response ^https?://notability\.com/global script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/goodbility.js, requires-body=true, tag=Goodbility-Notability
-http-response ^https://isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/goodbility.js, requires-body=true, tag=Goodbility-GoodNotes
-http-request ^https://isi\.csan\.[a-z.]+\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/goodbility.js, tag=Goodbility-Header
+http-response ^https?://notability\.com/global script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/goodbility_loon_response.js, requires-body=true, tag=Goodbility-Notability
+http-response ^https://isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/goodbility_loon_response.js, requires-body=true, tag=Goodbility-GoodNotes
+http-request ^https://isi\.csan\.[a-z.]+\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/goodbility_loon_header.js, tag=Goodbility-Header
