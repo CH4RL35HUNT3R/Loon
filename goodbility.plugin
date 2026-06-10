@@ -1,0 +1,11 @@
+#!name=Goodbility解锁
+#!desc=GoodNotes & Notability 会员解锁（还原自 ddgksf2013）
+#!author=ddgksf2013 (贾维斯还原)
+#!openUrl=https://t.me/ddgksf2021
+
+[Mitm]
+hostname = isi.csan.*, notability.com
+
+[Script]
+http-response ^https?://notability\.com/global script-path=https://github.com/CH4RL35HUNT3R/Loon/goodbility.js, requires-body=true, tag=Goodbility-Notability
+http-response ^https://isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$) script-path=goodbility_loon_response.js, requires-body=true, tag=Goodbility-GoodNotes
