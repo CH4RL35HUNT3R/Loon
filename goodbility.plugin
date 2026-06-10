@@ -2,6 +2,7 @@
 #!desc=GoodNotes & Notability 会员解锁（还原自 ddgksf2013）
 #!author=ddgksf2013
 #!openUrl=https://t.me/ddgksf2021
+#!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/23/e5/0123e5f0-0d55-3a64-8ea6-f8054be59a53/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg
 
 [Mitm]
 hostname = isi.csan.*, notability.com
