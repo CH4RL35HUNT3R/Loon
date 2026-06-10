@@ -1,22 +1,11 @@
-#!name=Goodbility解锁-响应改写
-#!desc=GoodNotes & Notability 会员解锁
-#!author=ddgksf2013
-#!match=^https?://notability\.com/global
-#!match=^https://isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$)
-#!type=http-response
-#!argument=requires-body=true
-
-
-// 适用于 GoodNotes & Notability
-// MITM hostname: isi.csan.*, notability.com
-
-let url = $request.url;
-let now = new Date();
-let isoTime = now.toISOString();
+// Goodbility 解锁 - Loon 响应脚本（兼容版）
+var url = $request.url;
+var now = new Date();
+var isoTime = now.toISOString();
+var dateStr = isoTime.split('.')[0] + "Z";
 
 if (url.indexOf('notability.com') !== -1) {
-  // ===== Notability 响应（真实还原）=====
-  let body = {
+  var body = {
     "data": {
       "processAppleReceipt": {
         "__typename": "SubscriptionResult",
@@ -41,12 +30,11 @@ if (url.indexOf('notability.com') !== -1) {
       }
     }
   };
-  console.log("Goodbility Notability 解锁成功 🎉");
-  $done({ body: JSON.stringify(body) });
+  console.log("Goodbility Notability OK");
+  $done({ "body": JSON.stringify(body) });
 } else {
-  // ===== GoodNotes (isi.csan.*) 响应（真实还原）=====
-  let body = {
-    "request_date": isoTime.split('.')[0] + "Z",
+  var body = {
+    "request_date": dateStr,
     "request_date_ms": Date.now(),
     "subscriber": {
       "entitlements": {
@@ -67,7 +55,7 @@ if (url.indexOf('notability.com') !== -1) {
         }
       },
       "first_seen": "2025-02-21T15:10:07Z",
-      "last_seen": isoTime.split('.')[0] + "Z",
+      "last_seen": dateStr,
       "management_": null,
       "original_app_user_id": "10fdb8be-9230-4d6f-91c5-ed36d8cdca88",
       "original_application_version": "2395679.285305451",
@@ -88,6 +76,6 @@ if (url.indexOf('notability.com') !== -1) {
     },
     "Attention": "恭喜你抓到元数据！由墨鱼分享，请勿售卖或分享他人！"
   };
-  console.log("Goodbility GoodNotes 解锁成功 🎉");
-  $done({ body: JSON.stringify(body) });
+  console.log("Goodbility GoodNotes OK");
+  $done({ "body": JSON.stringify(body) });
 }
