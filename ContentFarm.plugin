@@ -7,4 +7,4 @@
 hostname = www.google.com, google.com.hk, google.com
 
 [Script]
-http-response ^https?://(www\.)?google\.[a-z.]*/search\?(?!.*?apps=) script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/contentFarm_loon.js, requires-body=true, tag=ContentFarm
+http-response ^https?://(www\.)?google\.[a-z.]*/search\?(?!.*?apps=) script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/ContentFarm_loon.js, requires-body=true, tag=ContentFarm
