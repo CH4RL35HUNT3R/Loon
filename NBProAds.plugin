@@ -1,0 +1,68 @@
+#!name = NBPro去广告
+#!desc = 去除 NBPro 广告
+#!author = ddgksf2013
+#!openUrl = https://ddgksf2013.top/rewrite/NBProAds.conf
+
+[Rule]
+# > AnyThink / fusion mediation
+DOMAIN-SUFFIX,capsinfo.anythink.com,REJECT
+DOMAIN-SUFFIX,showtime.anythink.com,REJECT
+DOMAIN-SUFFIX,api.bridgeoos.com,REJECT
+DOMAIN-SUFFIX,pitk.birdgesdk.com,REJECT
+DOMAIN-SUFFIX,aa.birdgesdk.com,REJECT
+DOMAIN-SUFFIX,fusion-static.oss-cn-shenzhen.aliyuncs.com,REJECT
+
+# > Baidu MobAds
+DOMAIN-SUFFIX,mobads.baidu.com,REJECT
+DOMAIN-SUFFIX,cpu.baidu.com,REJECT
+DOMAIN-SUFFIX,cpu-openapi.baidu.com,REJECT
+DOMAIN-SUFFIX,mobads-pre-config.bj.bcebos.com,REJECT
+DOMAIN-SUFFIX,mobads-pre-config.cdn.bcebos.com,REJECT
+DOMAIN-SUFFIX,cpro.baidustatic.com,REJECT
+DOMAIN-SUFFIX,render-server.cdn.bcebos.com,REJECT
+
+# > Sigmob
+DOMAIN-SUFFIX,adservice.sigmob.cn,REJECT
+
+# > BeiZi / AdScope
+DOMAIN-SUFFIX,api.htp.ad-scope.com.cn,REJECT
+DOMAIN-SUFFIX,bid.ad-scope.com.cn,REJECT
+DOMAIN-SUFFIX,api-htp.beizi.biz,REJECT
+DOMAIN-SUFFIX,sdk.beizi.biz,REJECT
+DOMAIN-SUFFIX,sdktmp.hubcloud.com.cn,REJECT
+
+# > ZhangYu
+DOMAIN-SUFFIX,sdk.zhangyuyidong.cn,REJECT
+DOMAIN-SUFFIX,sdk6.zhangyuyidong.cn,REJECT
+
+# > AdIntl
+DOMAIN-SUFFIX,sdkcfg.adintl.cn,REJECT
+DOMAIN-SUFFIX,test.s.adintl.cn,REJECT
+
+# > 8ziben incentive ads
+DOMAIN-SUFFIX,api-cfg.8ziben.com,REJECT
+DOMAIN-SUFFIX,api-incentive.8ziben.com,REJECT
+DOMAIN-SUFFIX,static.8ziben.com,REJECT
+
+# > Tanx
+DOMAIN-SUFFIX,opehs.tanx.com,REJECT
+DOMAIN-SUFFIX,videoproxy.tanx.com,REJECT
+
+# > Etool Ads
+DOMAIN-SUFFIX,c.etoolads.cn,REJECT
+
+# > AdWangMai
+DOMAIN-SUFFIX,sdk.adx.adwangmai.com,REJECT
+DOMAIN-SUFFIX,sdk-cfg.adx.adwangmai.com,REJECT
+DOMAIN-SUFFIX,static.adwangmai.com,REJECT
+
+# > Kuaishou Ads
+DOMAIN-SUFFIX,open.e.kuaishou.com,REJECT
+DOMAIN-SUFFIX,open.e.kuaishou.cn,REJECT
+DOMAIN-SUFFIX,s.e.kuaishou.com,REJECT
+
+[Script]
+http-response ^https?:\/\/(?:nbtool8\.com|124\.222\.32\.246|117\.72\.39\.157|cesapp\.goypzc\.cn|47\.243\.71\.210)(?::\d+)?\/nb\/app(?:$|\?.*) script-path=https://raw.githubusercontent.com/CH4RL35HUNT3R/Loon/main/nbpro.ads.js, requires-body=true, tag=NBPro净化[墨鱼版]
+
+[Mitm]
+hostname = %APPEND% nbtool8.com, cesapp.goypzc.cn, 124.222.32.246, 117.72.39.157, 47.243.71.210
